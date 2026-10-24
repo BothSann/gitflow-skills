@@ -18,4 +18,6 @@ Read first:
 3. **Create.** Write body to a temp file, then:
    `gh issue create --title "<title>" --body-file <file>`
    Add `--assignee <login>` only if the user named one. No labels.
-4. **Reply.** Issue URL and branch name: `feature/<number>-<slug>` (`bugfix/` for `fix`).
+4. **Reply.** Issue URL and branch name `<prefix>/<number>-<slug>`:
+   - `feat` → `feature/`, `fix` → `bugfix/`, other types → `<type>/` (e.g. `chore/`).
+   - Slug: 2–5 lowercase words from the title, joined by `-`.
