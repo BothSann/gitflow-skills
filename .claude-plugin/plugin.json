@@ -1,0 +1,9 @@
+{
+  "name": "gitflow-skills",
+  "description": "Everyday GitHub flow: write issues and open pull requests in one consistent format.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Both Sann"
+  }
+}

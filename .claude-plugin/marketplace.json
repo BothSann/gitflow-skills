@@ -1,0 +1,14 @@
+{
+  "name": "gitflow-skills",
+  "description": "Personal git and GitHub workflow skills.",
+  "owner": {
+    "name": "Both Sann"
+  },
+  "plugins": [
+    {
+      "name": "gitflow-skills",
+      "source": "./",
+      "description": "Everyday GitHub flow: write issues and open pull requests in one consistent format."
+    }
+  ]
+}
