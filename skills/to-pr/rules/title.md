@@ -1,25 +1,16 @@
 # Title
 
-Format: `type(scope): description`
+Format: `type(scope): description` — no emoji.
 
-| Type | Use for |
-| --- | --- |
-| `feat` | New feature |
-| `fix` | Bug fix |
-| `refactor` | Structure change, same behavior |
-| `perf` | Performance |
-| `docs` | Documentation |
-| `test` | Tests |
-| `chore` | Maintenance, dependencies, tooling |
-| `style` | Formatting only |
+Types: `feat`, `fix`, `refactor`, `perf`, `chore`, `style`, `build`, `ci`, `docs`, `test`.
 
 Rules:
-- All lowercase.
-- `scope` = affected module, e.g. `payments`, `portal`, `parcel`.
-- Colon, then one space.
-- Description starts with a verb: `add`, `fix`, `implement`, `integrate`, `allow`.
-- No trailing period. One title per issue.
+- Linked issue: reuse its title without the emoji. Shorten or rescope it if the code landed elsewhere.
+- Breaking change: add `!` after the scope, e.g. `feat(api)!: use UUID banner IDs`.
+- Description starts with a lowercase verb. Keep proper nouns, acronyms, and code names as written.
+- No trailing period.
+- Commit messages use the same format.
 
 Examples:
-- `feat(payments): implement shared online payments with aba payway`
-- `fix(portal): hide customers without push tokens from notification recipients`
+- `fix(portal): hide customers without push tokens from recipients`
+- `fix(docker): upgrade PHP images to v5.0.2`
