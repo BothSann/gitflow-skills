@@ -8,11 +8,13 @@ Base:
 - Everything else targets `next` if `origin/next` exists, else `main`.
 
 Names: `<prefix>/<issue>-<slug>`, e.g. `bugfix/152-portal-notification-push-recipients`.
+No issue: `<prefix>/<slug>`. Slug: 2–5 lowercase words from the title, joined by `-`.
 
 | Prefix | For | Cut from |
 | --- | --- | --- |
-| `feature/` | New work | base |
-| `bugfix/` | Normal fixes | base |
+| `feature/` | `feat` | base |
+| `bugfix/` | `fix` | base |
+| `<type>/` | Other types, e.g. `chore/`, `refactor/`, `docs/` | base |
 | `hotfix/` | Production fixes | `main` |
 | `release-fix/` | Release-only fixes | `release/<version>` |
 
