@@ -11,10 +11,22 @@ No labels. PR titles drop the issue's emoji.
 
 ## Install
 
+Claude Code plugin:
+
 ```
 /plugin marketplace add BothSann/gitflow-skills
 /plugin install gitflow-skills@gitflow-skills
 ```
+
+Or with [`npx skills`](https://github.com/vercel-labs/skills) (Claude Code, Cursor, Codex, and other agents):
+
+```
+npx skills add BothSann/gitflow-skills                  # all skills
+npx skills add BothSann/gitflow-skills --skill to-pr    # one skill
+npx skills add BothSann/gitflow-skills -g               # global, all projects
+```
+
+Use one method per agent. Installing both in Claude Code gives duplicate skills.
 
 Needs `git` and `gh` (logged in).
 
