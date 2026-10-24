@@ -10,7 +10,7 @@ Claude Code skills for everyday GitHub work.
 ## Install
 
 ```
-/plugin marketplace add C:\Users\thann\Desktop\gitflow-skills
+/plugin marketplace add BothSann/gitflow-skills
 /plugin install gitflow-skills@gitflow-skills
 ```
 
