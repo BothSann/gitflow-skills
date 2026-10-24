@@ -1,36 +1,39 @@
 # Body
 
-Feature or task:
-
 ```markdown
-## Goal
-<one sentence: what and why>
+## 📋 Summary
+<1–2 sentences: what, and why or the current problem>
 
-## Acceptance criteria
-- [ ] <testable outcome>
+## 🎯 Scope
+<one sentence or bullets: what changes, and what stays unchanged>
 
-## Notes
-<optional: links, out of scope>
+## ✅ Acceptance Criteria
+- <testable outcome>
 ```
 
-Bug (`fix`): replace `## Goal` with `## Bug` — one or two sentences on what happens and why it is wrong.
+Optional sections, only when needed (place between Scope and Acceptance Criteria):
+- `## 🔍 Findings` — what an investigation found (bugs).
+- `## 📚 Approved references` — spec or design links, pinned to a commit.
+- `## 🔒 Core rules` — invariants that must hold.
+- `## ⚠️ Dependencies` — what this waits on or does not authorize.
 
 Rules:
-- One line per item. No filler, no restating the title.
-- Criteria are testable outcomes, not implementation steps. Max 5.
-- Omit `## Notes` when empty.
+- Same body for features and bugs. A bug's Summary states the current wrong behavior.
+- Name exact things: endpoints, classes, tests, versions, numbers.
+- Criteria: plain bullets, testable outcomes, 3–5. Add one "existing X is unchanged" check when behavior could regress.
+- One line per item. No filler.
 
 Example:
 
 ```markdown
-## Goal
-Customers pay orders online with ABA PayWay.
+## 📋 Summary
+The personal-notification recipient dropdown lists customers who cannot receive push notifications.
 
-## Acceptance criteria
-- [ ] Customer can pay with PayWay
-- [ ] Successful payment marks order `paid`
-- [ ] Failed or cancelled payment keeps order `pending`
+## 🎯 Scope
+Show only customers with a registered push token in preloaded options and search results. Leave driver selection unchanged.
 
-## Notes
-Out of scope: refunds.
+## ✅ Acceptance Criteria
+- Customers without a push token do not appear in either list.
+- Customers with a push token remain selectable.
+- A driver subscription does not make a customer eligible.
 ```

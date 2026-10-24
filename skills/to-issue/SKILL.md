@@ -13,9 +13,9 @@ Read first:
 
 ## Steps
 
-1. **Gather.** Use text after `/to-issue` plus this session's discussion. Work out type, scope, goal, criteria. Ask one short question only if type or scope is unclear.
+1. **Gather.** Use text after `/to-issue` plus this session's discussion. Work out type, scope, summary, criteria. Ask one short question only if type or scope is unclear.
 2. **Write.** Title and body per the rules.
-3. **Label.** `gh label create <type>` (ignore "already exists").
-4. **Create.** Write body to a temp file, then:
-   `gh issue create --title "<title>" --body-file <file> --label <type>`
-5. **Reply.** Issue URL and branch name: `feature/<number>-<slug>` (`bugfix/` for `fix`).
+3. **Create.** Write body to a temp file, then:
+   `gh issue create --title "<title>" --body-file <file>`
+   Add `--assignee <login>` only if the user named one. No labels.
+4. **Reply.** Issue URL and branch name: `feature/<number>-<slug>` (`bugfix/` for `fix`).

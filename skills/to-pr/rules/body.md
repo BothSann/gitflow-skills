@@ -2,46 +2,48 @@
 
 ```markdown
 ## Summary
-<one sentence>
+<1–2 sentences, or 2–3 bullets for a multi-part change>
 
-## Changes
-- <what a reviewer needs to know>
+## Scope
+- <what changed, with exact files or symbols>
+- <what stays unchanged>
 
-## Acceptance criteria
-- [x] <criterion met>
-- [ ] <criterion not met yet>
+## Acceptance Criteria
+- <criterion the diff meets>
 
 ## Verification
-- <command run or manual check done>
+- `<exact command>` (<result, e.g. 13 passed>)
 
 Closes #<number>
 ```
 
 Rules:
-- One line per item. No filler. Max 5 changes.
-- Criteria come from the linked issue. Tick only what the diff actually meets.
-- Verification: max 3 lines. Exact command or manual check. Only what was actually done in this session or stated by the user. Nothing done: `Not verified`. Never omit.
-- No linked issue: omit `Closes`, write criteria from the change.
-- Omit any other section with nothing to say.
+- Plain headings, no emoji.
+- Scope: max 5 bullets.
+- Criteria: from the linked issue, reworded to match what was built. Plain bullets. List only criteria actually met.
+- Verification: exact commands with results, only what was actually run in this session or stated by the user. Never omit.
+- Anything not run or not met goes in `## Verification Limits`, e.g. "Full test suite not run. No deployment performed."
+- `## Notes` only for ops steps outside the repo or unrelated failures.
+- No linked issue: omit `Closes`.
+- One line per item. No filler.
 
 Example:
 
 ```markdown
 ## Summary
-Add ABA PayWay online payment for orders.
+Hide customers without a push token from the personal-notification recipient dropdown.
 
-## Changes
-- Add PayWay service and config
-- Add payment request endpoint and callback handler
+## Scope
+- Filter preloaded and searched recipients by customer push subscriptions.
+- Leave driver selection unchanged.
 
-## Acceptance criteria
-- [x] Customer can pay with PayWay
-- [x] Successful payment marks order `paid`
-- [x] Failed or cancelled payment keeps order `pending`
+## Acceptance Criteria
+- Customers without a push token are absent from both dropdown paths.
+- Driver subscriptions do not qualify customers.
 
 ## Verification
-- `php artisan test --filter=PayWay` passes
-- Paid and cancelled a sandbox order by hand
+- `php artisan test --compact tests/Feature/NotificationResourceTest.php` (13 passed)
+- `vendor/bin/pint --dirty`
 
-Closes #42
+Closes #152
 ```
