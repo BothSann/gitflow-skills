@@ -15,5 +15,5 @@ Rules:
 - Narrow tests to changed areas. Run the full suite only when changes are broad or no narrower target exists.
 - Never run commands that deploy, migrate shared databases, or call paid or production services.
 - Record each command and its result, e.g. `(13 passed)`, for Verification.
-- No checks found or none runnable: write `Not run` under Verification and give the reason in Verification Limits.
+- No checks found or none runnable: write `Not run` under Verification.
 - A failure caused by the local environment, not the change (e.g. missing credentials): note it under Notes and continue.
