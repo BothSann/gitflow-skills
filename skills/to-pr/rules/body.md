@@ -25,7 +25,6 @@ Rules:
 - Scope: max 5 bullets. With a sketch, describe behavior without file paths; without one, name exact files or symbols.
 - Criteria: from the linked issue, reworded to match what was built. Plain bullets. List only criteria actually met.
 - Verification: exact commands with results, only what was actually run in this session or stated by the user. Never omit. Nothing ran: `Not run`.
-- Anything not run or not met goes in `## Verification Limits`, e.g. "Full test suite not run. No deployment performed."
 - `## Notes` only for ops steps outside the repo or unrelated failures.
 - No linked issue: omit `Closes`.
 - One line per item. No filler.
