@@ -4,6 +4,8 @@
 ## Summary
 <1–2 sentences, or 2–3 bullets for a multi-part change>
 
+<optional sketch per rules/summary.md>
+
 ## Scope
 - <what changed, with exact files or symbols>
 - <what stays unchanged>
@@ -19,7 +21,8 @@ Closes #<number>
 
 Rules:
 - Plain headings, no emoji.
-- Scope: max 5 bullets.
+- Summary sketch: optional, per `rules/summary.md`.
+- Scope: max 5 bullets. With a sketch, describe behavior without file paths; without one, name exact files or symbols.
 - Criteria: from the linked issue, reworded to match what was built. Plain bullets. List only criteria actually met.
 - Verification: exact commands with results, only what was actually run in this session or stated by the user. Never omit. Nothing ran: `Not run`.
 - Anything not run or not met goes in `## Verification Limits`, e.g. "Full test suite not run. No deployment performed."
@@ -32,6 +35,17 @@ Example:
 ```markdown
 ## Summary
 Hide customers without a push token from the personal-notification recipient dropdown.
+
+```diff
+ app/Filament/Resources/NotificationResource.php
+   form()
+     Select::make('recipient')
+-      ->options(Customer::pluck('name', 'id'))
++      ->options(Customer::whereHas('pushSubscriptions')->pluck('name', 'id'))
++      ->getSearchResultsUsing(...)   # same filter on search
+ tests/Feature/
++  NotificationResourceTest.php
+```
 
 ## Scope
 - Filter preloaded and searched recipients by customer push subscriptions.

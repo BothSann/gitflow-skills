@@ -5,7 +5,7 @@ Claude Code skills for everyday GitHub work, following the `bstnt/platform` conv
 | Skill | Does |
 | --- | --- |
 | `/to-issue` | Creates an issue: `<emoji> type(scope): description`, 📋 Summary, 🎯 Scope, ✅ Acceptance Criteria |
-| `/to-pr` | Creates the branch if needed, commits, rebases onto base, runs tests and lint, pushes, opens the PR: Summary, Scope, Acceptance Criteria, Verification, `Closes #N` |
+| `/to-pr` | Creates the branch if needed, commits, rebases onto base, runs tests and lint, pushes, opens the PR: Summary (with optional diff sketch), Scope, Acceptance Criteria, Verification, `Closes #N` |
 
 No labels. PR titles drop the issue's emoji.
 
