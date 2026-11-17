@@ -12,6 +12,7 @@ Read first:
 - `rules/checks.md`
 - `rules/title.md`
 - `rules/body.md`
+- `rules/summary.md`
 
 Run every git command through Bash (POSIX syntax), not PowerShell.
 
